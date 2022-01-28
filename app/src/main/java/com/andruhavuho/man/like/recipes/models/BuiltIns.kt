@@ -1,0 +1,39 @@
+package com.andruhavuho.man.like.recipes.models
+
+val DUMMY_RECIPES = listOf(
+    Recipe(
+        1,
+        "Shit",
+        null,
+        false,
+        ""
+    ),
+    Recipe(
+        2,
+        "Poop",
+        null,
+        false,
+        ""
+    ),
+    Recipe(
+        3,
+        "Jopa",
+        null,
+        false,
+        ""
+    ),
+    Recipe(
+        4,
+        "Elda",
+        null,
+        false,
+        ""
+    ),
+    Recipe(
+        5,
+        "Govno",
+        null,
+        false,
+        ""
+    )
+)

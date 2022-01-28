@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/light_text_on_burgundy">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/ivBigRecipeImage"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@color/orange_200"
+            android:contentDescription="food image"
+            android:src="@drawable/ic_empty_image"
+            app:layout_constraintDimensionRatio="16:9"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/ivReturnBackArrow"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_margin="16dp"
+            android:contentDescription="Arrow back"
+            android:src="@drawable/ic_arrow_back"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@color/burgundy_700" />
+
+        <TextView
+            android:id="@+id/tvRecipeTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/orange_500"
+            android:gravity="center"
+            android:padding="8dp"
+            android:text="Имя рецепта"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ivBigRecipeImage" />
+
+        <TextView
+            android:id="@+id/tvNutritionalPropertiesTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/burgundy_500"
+            android:gravity="center"
+            android:padding="4dp"
+            android:text="Пищевая ценность на 100г продукта:"
+            android:textColor="@color/light_text_on_burgundy"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvRecipeTitle" />
+
+        <TableLayout
+            android:id="@+id/tlNutritionProperties"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/burgundy_500"
+            android:orientation="horizontal"
+            android:paddingHorizontal="8dp"
+            android:paddingVertical="4dp"
+            android:stretchColumns="*"
+            app:layout_constraintTop_toBottomOf="@id/tvNutritionalPropertiesTitle">
+
+            <TableRow
+                android:layout_marginVertical="4dp"
+                android:background="@color/yellowish_white"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="16dp"
+                    android:paddingVertical="4dp"
+                    android:text="Энергия"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/tvRecipeCalories"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:paddingHorizontal="16dp"
+                    android:paddingVertical="4dp"
+                    android:text="XXX ккал"
+                    android:textSize="20sp" />
+            </TableRow>
+
+            <TableRow
+                android:layout_marginVertical="4dp"
+                android:background="@color/yellowish_white"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="16dp"
+                    android:paddingVertical="4dp"
+                    android:text="Белки"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/tvRecipeProteins"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:paddingHorizontal="16dp"
+                    android:paddingVertical="4dp"
+                    android:text="YY г"
+                    android:textSize="20sp" />
+            </TableRow>
+
+            <TableRow
+                android:layout_marginVertical="4dp"
+                android:background="@color/yellowish_white"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="16dp"
+                    android:paddingVertical="4dp"
+                    android:text="Жиры"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/tvRecipeFats"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:paddingHorizontal="16dp"
+                    android:paddingVertical="4dp"
+                    android:text="ZZ г"
+                    android:textSize="20sp" />
+            </TableRow>
+
+            <TableRow
+                android:layout_marginVertical="4dp"
+                android:background="@color/yellowish_white"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="16dp"
+                    android:paddingVertical="4dp"
+                    android:text="Углеводы"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/tvRecipeCarbohydrates"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:paddingHorizontal="16dp"
+                    android:paddingVertical="4dp"
+                    android:text="WW г"
+                    android:textSize="20sp" />
+            </TableRow>
+
+        </TableLayout>
+
+        <TextView
+            android:id="@+id/tvIngredientsLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/orange_500"
+            android:gravity="center"
+            android:padding="4dp"
+            android:text="Ингредиенты:"
+            android:textColor="@color/dark_text_on_orange"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tlNutritionProperties" />
+
+        <TextView
+            android:id="@+id/tvRecipeIngredientsLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/orange_500"
+            android:gravity="center"
+            android:padding="4dp"
+            android:text="Ингридиенты:"
+            android:textColor="@color/dark_text_on_orange"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tlNutritionProperties" />
+
+        <TextView
+            android:id="@+id/tvRecipeIngredients"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/light_text_on_burgundy"
+            android:paddingHorizontal="16dp"
+            android:paddingVertical="8dp"
+            android:text="Укроп, кошачья жопа, 25 картошек, 17 мондавошек, ведро воды, хрен туды, охапка дров и плов готов"
+            android:textColor="@color/dark_text_on_orange"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvRecipeIngredientsLabel" />
+
+        <TextView
+            android:id="@+id/tvHowToCookLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/burgundy_500"
+            android:gravity="center"
+            android:padding="4dp"
+            android:text="Способ приготовления"
+            android:textColor="@color/light_text_on_burgundy"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvRecipeIngredients" />
+
+        <FrameLayout
+            android:id="@+id/flHowToCookFrame"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/burgundy_500"
+            android:paddingTop="4dp"
+            android:paddingHorizontal="4dp"
+            android:paddingBottom="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvHowToCookLabel">
+
+            <TextView
+                android:id="@+id/tvHowToCook"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/yellowish_white"
+                android:paddingHorizontal="8dp"
+                android:paddingVertical="4dp"
+                tools:text="@tools:sample/lorem[50]"
+                android:textColor="@color/dark_text_on_orange"
+                android:textSize="20sp" />
+
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/tvCategories"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/orange_200"
+            android:padding="8dp"
+            android:text="Категории: Завтрак, Углеводное окно"
+            android:textColor="@color/dark_text_on_orange"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/flHowToCookFrame" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
+

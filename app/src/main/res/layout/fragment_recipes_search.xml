@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:id="@+id/flRecipeSearchHolder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="24dp"
+        android:paddingBottom="8dp"
+        android:paddingHorizontal="32dp"
+        android:background="@color/orange_700"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <EditText
+            android:id="@+id/etRecipeSearch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FFF9E6"
+            android:hint="Введите название рецепта"
+            android:padding="8dp"
+            android:textSize="20sp"
+            android:gravity="center"
+            android:imeOptions="actionSearch"
+            android:drawableEnd="@drawable/ic_search"
+            android:autofillHints="search"
+            android:inputType="textNoSuggestions" />
+
+    </FrameLayout>
+
+    <HorizontalScrollView
+        android:id="@+id/svCategoryButtonsHolder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/flRecipeSearchHolder"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@color/burgundy_700"
+        android:scrollbars="none"
+        android:paddingVertical="8dp">
+
+        <LinearLayout
+            android:id="@+id/llCategoryButtons"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingHorizontal="8dp">
+
+            <Button
+                android:id="@+id/btnAllMealTypes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Все"
+                android:layout_marginHorizontal="4dp"/>
+
+            <Button
+                android:id="@+id/btnBreakfast"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Завтрак"
+                android:layout_marginHorizontal="4dp"/>
+
+            <Button
+                android:id="@+id/btnLunch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Обед"
+                android:layout_marginHorizontal="4dp"/>
+
+            <Button
+                android:id="@+id/btnDinner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ужин"
+                android:layout_marginHorizontal="4dp"/>
+
+            <Button
+                android:id="@+id/btnSnack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Перекус"
+                android:layout_marginHorizontal="4dp"/>
+
+            <Button
+                android:id="@+id/btnPostWorkoutMeal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Углеводное окно"
+                android:layout_marginHorizontal="4dp"/>
+
+            <Button
+                android:id="@+id/btnDesert"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Десерт"
+                android:layout_marginHorizontal="4dp"/>
+
+        </LinearLayout>
+
+    </HorizontalScrollView>
+
+    <TextView
+        android:id="@+id/tvSearchResultCount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Найдено рецептов: N"
+        app:layout_constraintTop_toBottomOf="@id/svCategoryButtonsHolder"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:gravity="center"
+        android:padding="4dp"
+        android:textColor="@color/burgundy_700"
+        android:background="@color/orange_900" />
+
+    <com.andruhavuho.man.like.recipes.ui.search.AnimatedGridRecyclerView
+        android:id="@+id/rvSearchResultRecipes"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/tvSearchResultCount"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@color/orange_200" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
